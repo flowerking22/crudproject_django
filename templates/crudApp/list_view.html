@@ -1,0 +1,37 @@
+<html>
+{% load static %}
+<head>  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+</head><div class="row justify-content-center">
+
+<div class="col-9 ">
+    
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <tr><a href=create class="d-flex flex-row-reverse bd-highlight">create</a></tr>
+        </div>
+        <div class="main">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr class="bg-success">
+                    <th>sno</th>
+                    <th>sname</th>
+                    <th>ssalary</th>
+                    <th>saddress</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for data in dataset %}.
+            <tr>
+            <td>{{ data.sno}}</td>
+            <td>{{ data.sname }}</td>
+            <td>{{ data.ssalary }}</td>
+            <td>{{ data.saddress }}</td>
+            <td><a href=details/{{data.id}}>Details</a></td>
+            <td><a href=update/{{data.id}}>Update {{ data.sname }}</a></td>
+            <td><a href=delete/{{data.id}}>Delete {{ data.sname }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        </div>
+</div>
